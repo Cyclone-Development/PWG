@@ -7,15 +7,17 @@ namespace MenuNameSpace
     
     class Menu{
 
-        private:
-        InputHandler inputHandler;
+        
+        
 
-        public: 
-        void DisplayWelcome();
-        void DisplayPasswordMenu();
-        void DisplayEntryMenu();
+        public:
+        static void DisplayWelcome(); //Done
+        static void DisplayPasswordMenu();
+        static void DisplayMainMenu();
+        static void DisplayInfoMenu();
+        static void DisplayHelpMenu();
 
-        Menu(InputHandler &InputHandler);
+        
         Menu();
         ~Menu();
         
