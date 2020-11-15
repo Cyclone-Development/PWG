@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/PWG/v16
+/Debug
+/.vs/PWG/config
+/.vs
+/x64/Debug/PWG.tlog
+/x64/Debug
+/PWG.sln
+/PWG.vcxproj
+/PWG.vcxproj.filters
+/PWG.vcxproj.user
