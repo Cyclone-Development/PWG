@@ -1,5 +1,6 @@
 #include "Input.h"
 #include <iostream>
+<<<<<<< HEAD
 #include <locale>
 #include "Menu.h"
 #include <cstdlib>
@@ -10,6 +11,18 @@ using namespace Input;
 
 //Constructor
 InputHandler::InputHandler() :passLength{ 0 }, passLengthChecked{ false } {
+=======
+#include <vector>
+#include <string>
+#include "Input.h"
+#include "Menu.h"
+using namespace Input;
+
+//Constructor
+InputHandler::InputHandler() :passLength{ 0 } {
+     std::cout << "InputHandler Constructed" << std::endl;
+    
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
         
     }
 
@@ -19,12 +32,18 @@ InputHandler::InputHandler() :passLength{ 0 }, passLengthChecked{ false } {
  }
 
 
+<<<<<<< HEAD
 bool InputHandler::CheckMainInput(){
    std::string Temp_M_S;
+=======
+void InputHandler::HandleMainInput(){
+   string Temp_M_S;
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
    getline(std::cin,Temp_M_S );
    std::size_t found = Temp_M_S.find_first_not_of(getMainValidInput());
     if (found!=std::string::npos)
     {
+<<<<<<< HEAD
         return false;
     }
     else if (Temp_M_S.length() > 1 || Temp_M_S.length() < 1) {    
@@ -33,9 +52,19 @@ bool InputHandler::CheckMainInput(){
   else{
         setCheckedMainInput(Temp_M_S);
         return true;
+=======
+        std::cout<<"\nUnacceptable answer Please Try Entering a Valid Input" << std::endl;
+        MenuNameSpace::Menu::DisplayMainMenu();
+        HandleMainInput();
+    }
+  else{
+
+        MenuAllocater(Temp_M_S);
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
   }
 }
 
+<<<<<<< HEAD
 
 
 void InputHandler::PressEnterContinue()
@@ -88,6 +117,59 @@ bool Input::InputHandler::NumeralsOnly(string& Temp_P_L)
     std::size_t found = Temp_P_L.find_first_not_of(getNumerals());
     if (found != string::npos)
     {
+=======
+}
+
+void InputHandler::HandlePassInput()
+{
+    string Temp_P_S;
+    getline(std::cin, Temp_P_S);
+    std::size_t found = Temp_P_S.find_first_not_of(getPassValidInput());
+    if (found != std::string::npos)
+    {
+        std::cout << "\nUnacceptable answer Please Try Entering a Valid Input" << std::endl;
+        MenuNameSpace::Menu::DisplayMainMenu();
+        HandleMainInput();
+    }
+    else {
+
+        MenuAllocater(Temp_P_S);
+    }
+
+}
+
+void InputHandler::HandleInfoInput()
+{
+    string Temp_I_S;
+    getline(std::cin, Temp_I_S);
+    std::size_t found = Temp_I_S.find_first_not_of(getMainValidInput());
+    if (found != std::string::npos)
+    {
+        std::cout << "\nUnacceptable answer Please Try Entering a Valid Input" << std::endl;
+        MenuNameSpace::Menu::DisplayMainMenu();
+        HandleMainInput();
+    }
+    else {
+
+        MenuAllocater(Temp_I_S);
+    }
+}
+
+void InputHandler::MenuAllocater(string &M_S)
+{
+
+    
+
+
+    char foo = M_S[0];
+    std::cout << foo;
+    std::cin >> foo;
+
+}
+
+
+   
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
 
         return false;
 

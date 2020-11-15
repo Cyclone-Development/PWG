@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <string>
 #include <iostream>
 #include "Generator.h"
@@ -15,11 +16,21 @@ Generator::Generator(Exporter &Ex)
 {
 	Gen_Exporter = &Ex;
 	InitializeCharacters();
+=======
+#include "Generator.h"
+#include <string>
+
+
+
+Generator::Generator()
+{
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
 }
 
 Generator::~Generator()
 {
 }
+<<<<<<< HEAD
 
 
 /*
@@ -45,3 +56,5 @@ void Generator::PrintCharacters()
 
 }
 
+=======
+>>>>>>> d42e017... Got the Input class more fleshed out, its not done and still needs to be refactored. Also Instead of having the Menu class and Input class include eachother , the Menu class is now just static to avoid circular dependency
