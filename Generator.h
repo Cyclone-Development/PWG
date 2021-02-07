@@ -1,6 +1,7 @@
 #ifndef _GENERATOR_H
 #define _GENERATOR_H
 #include <random>
+#include "Exporter.h"
 
 using std::string;
 
@@ -8,18 +9,31 @@ class Generator {
 
 private:
 
+	Exporter* Gen_Exporter;
+
 	string Input; // Input first sanitized and handled from the Input Class 
 	string CreatedPassWord; // Final Password
 	
-	bool LowerAlpha; // (a,b,c,d,e...)
-	bool UpperAlpha;// (A,B,C,D,E...)
-	bool NumeralDigits;//(0-9)
-	bool SpecialSymbols;//(#,%,&,*...)
-	bool IncludeSpace; //Whether to allow Spaces
+	bool isLowerAlpha; // (a,b,c,d,e...)
+	bool isUpperAlpha;// (A,B,C,D,E...)
+	bool isNumeralDigits;//(0-9)
+	bool isSpecialSymbols;//(#,%,&,*...)
+	bool isIncludeSpace; //Whether to allow Spaces
+
+	
+
+	
+
 public:
 
+	int characters[96];
 
-	Generator();
+	void InitializeCharacters();
+
+
+	void PrintCharacters();
+
+	Generator(Exporter &Ex);
 	~Generator();
 
 };
