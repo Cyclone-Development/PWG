@@ -1,5 +1,10 @@
-#pragma once
+#ifndef EXPORTER_H
+#define EXPORTER_H
 class Exporter
 {
+public:
+	Exporter();
+	~Exporter();
 };
 
+#endif
